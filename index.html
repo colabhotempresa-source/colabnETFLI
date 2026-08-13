@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
 
-    <!-- ========== HEADER DE SEGURANÇA ========== -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta http-equiv="Referrer-Policy" content="no-referrer">
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()">
-    <meta name="theme-color" content="#0b0b14">
+    <meta name="theme-color" content="#0a0a12">
     <meta name="color-scheme" content="dark">
     <meta http-equiv="Content-Security-Policy" content="
         default-src 'none';
@@ -55,7 +54,7 @@
     /></noscript>
 
     <title>COLAB HOT PRO | Ferramentas Digitais Profissionais</title>
-    <meta name="description" content="Soluções digitais premium para automação, gestão e alto desempenho. Ferramentas exclusivas, segurança total e suporte especializado.">
+    <meta name="description" content="Soluções digitais premium para automação, gestão e alto desempenho. Ferramentas exclusivas, segurança total e entrega automática.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -717,6 +716,30 @@
             margin: 0 auto;
         }
 
+        .no-test-warning {
+            background: rgba(239, 68, 68, 0.08);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 700;
+            color: #fca5a5;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            animation: warningPulse 2s ease-in-out infinite;
+        }
+
+        .no-test-warning i {
+            margin-right: 8px;
+        }
+
+        @keyframes warningPulse {
+            0%, 100% { box-shadow: 0 0 10px rgba(239, 68, 68, 0.2); }
+            50% { box-shadow: 0 0 25px rgba(239, 68, 68, 0.5); }
+        }
+
         /* ========== CANAIS ========== */
         .channel-links {
             padding: 70px 0;
@@ -909,7 +932,7 @@
             background-color: var(--card);
             border-radius: var(--radius-xl);
             padding: 36px 30px;
-            max-width: 560px;
+            max-width: 600px;
             width: 100%;
             position: relative;
             border: 1px solid var(--border-light);
@@ -959,24 +982,25 @@
 
         /* Tabs de pagamento */
         .payment-tabs {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 22px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 24px;
         }
 
         .payment-tab {
-            flex: 1;
-            padding: 12px;
+            padding: 16px;
             text-align: center;
             background-color: var(--darker);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
+            border: 2px solid var(--border);
+            border-radius: var(--radius-md);
             cursor: pointer;
-            font-weight: 600;
-            font-size: 0.9rem;
+            font-weight: 700;
+            font-size: 0.95rem;
             color: var(--muted);
             transition: var(--transition);
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             gap: 8px;
@@ -991,10 +1015,21 @@
             background-color: rgba(124, 58, 237, 0.1);
             border-color: var(--primary);
             color: var(--primary-light);
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.2);
         }
 
         .payment-tab i {
-            font-size: 1.1rem;
+            font-size: 1.4rem;
+        }
+
+        .payment-tab span {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--muted);
+        }
+
+        .payment-tab.active span {
+            color: var(--primary-light);
         }
 
         .payment-pane {
@@ -1434,6 +1469,55 @@
             background: rgba(124, 58, 237, 0.1);
         }
 
+        /* ===== BANNER DE CUPOM DE BOAS-VINDAS ===== */
+        .welcome-banner {
+            position: fixed;
+            top: 76px;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.95), rgba(245, 158, 11, 0.9));
+            padding: 10px 20px;
+            text-align: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .welcome-banner .coupon-code {
+            background: rgba(0,0,0,0.3);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-family: 'Space Grotesk', monospace;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .welcome-banner .coupon-code:hover {
+            background: rgba(0,0,0,0.5);
+        }
+
+        .welcome-banner .close-banner {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0 5px;
+        }
+
+        .welcome-banner .close-banner:hover {
+            color: #ddd;
+        }
+
         /* ===== BOTÃO DE SUPORTE FIXO ===== */
         .support-fab {
             position: fixed;
@@ -1600,6 +1684,7 @@
         @media (max-width: 768px) {
             body { padding-top: 64px; }
             .header-container { padding: 12px 0; }
+            .welcome-banner { top: 64px; font-size: 0.8rem; padding: 8px 15px; }
             .nav-links {
                 position: fixed;
                 top: 64px;
@@ -1637,7 +1722,8 @@
             .promo-timer { padding: 12px 16px; gap: 10px; }
             .timer-text { font-size: 0.9rem; }
             .timer-clock { font-size: 1.3rem; padding: 4px 12px; }
-            .payment-tabs { flex-direction: column; gap: 8px; }
+            .payment-tabs { grid-template-columns: 1fr; gap: 8px; }
+            .payment-tab { flex-direction: row; }
         }
 
         @media (max-width: 480px) {
@@ -1652,6 +1738,7 @@
             .support-btn { width: 44px; height: 44px; font-size: 1.3rem; }
             .pix-cpf-fixo .cpf-value { font-size: 0.78rem; padding: 3px 8px; }
             .crypto-amount { font-size: 1.6rem; }
+            .welcome-banner { font-size: 0.75rem; }
         }
     </style>
 
@@ -1693,6 +1780,15 @@
 </head>
 <body>
 
+    <!-- Banner de cupom de boas-vindas -->
+    <div id="welcomeBanner" class="welcome-banner">
+        <i class="fas fa-gift"></i>
+        <span>Bem-vindo! Use o cupom</span>
+        <span class="coupon-code" id="welcomeCouponCode">BEMVINDO5</span>
+        <span>para R$5 de desconto em qualquer produto</span>
+        <button class="close-banner" id="closeBanner" aria-label="Fechar">&times;</button>
+    </div>
+
     <header id="mainHeader">
         <div class="container header-container">
             <a href="#" class="logo">COLAB HOT<span>PRO</span><span class="pro-badge">PRO</span></a>
@@ -1709,7 +1805,6 @@
         </div>
     </header>
 
-    <!-- ===== BOTÃO DE SUPORTE FIXO ===== -->
     <div class="support-fab">
         <span class="support-label"><i class="fas fa-headset"></i> SUPORTE</span>
         <a href="https://t.me/suphotvip" target="_blank" class="support-btn" aria-label="Suporte no Telegram">
@@ -1721,7 +1816,7 @@
     <section class="hero">
         <div class="container">
             <h1>SOLUÇÕES DIGITAIS PROFISSIONAIS</h1>
-            <p>Automatize, escale e monetize com ferramentas de alta performance. Tecnologia avançada, segurança total e suporte especializado para o seu negócio digital.</p>
+            <p>Automatize, escale e monetize com ferramentas de alta performance. Tecnologia avançada, segurança total e entrega automática.</p>
             <div class="hero-badges">
                 <div class="badge"><i class="fas fa-shield-alt"></i><span>Ambiente 100% Seguro</span></div>
                 <div class="badge"><i class="fas fa-rocket"></i><span>Entrega Automática</span></div>
@@ -1934,7 +2029,7 @@
                         <h3>Membros para Telegram</h3>
                         <div class="product-features">
                             <div class="feature"><i class="fas fa-check"></i><span>Membros reais para grupos e canais</span></div>
-                            <div class="feature"><i class="fas fa-check"></i><span>Entrega manual após confirmação</span></div>
+                            <div class="feature"><i class="fas fa-check"></i><span>Entrega automática após confirmação</span></div>
                             <div class="feature"><i class="fas fa-check"></i><span>Pacotes sob demanda</span></div>
                         </div>
                         <div class="product-actions">
@@ -1960,13 +2055,17 @@
                 <p>Ferramenta exclusiva de acesso remoto com captura de dados avançada. Selecione a versão ideal para o seu perfil.</p>
             </div>
 
+            <div class="no-test-warning">
+                <i class="fas fa-exclamation-triangle"></i> NÃO EXISTE TESTES GRÁTIS. CURIOSOS, NÃO PERCA SEU TEMPO.
+            </div>
+
             <div class="products-grid">
-                <!-- KL REMOTA BT MOB - Versão Original -->
+                <!-- KL Remota V4.2 -->
                 <div class="product-card special-card">
-                    <div class="product-badge badge-promo-limitada">🔥 PROMO LIMITADA</div>
+                    <div class="product-badge badge-promo-limitada">🔥 V4.2</div>
                     <div class="product-image"><i class="fas fa-keyboard"></i></div>
                     <div class="product-info">
-                        <h3>KL REMOTA BT MOB + BYPASS</h3>
+                        <h3>KL REMOTA BT MOB V4.2</h3>
                         <div class="product-features">
                             <div class="feature"><i class="fas fa-key"></i><span>⌨️ Registro completo de teclas</span></div>
                             <div class="feature"><i class="fas fa-camera"></i><span>📸 Captura de tela automática</span></div>
@@ -1975,17 +2074,17 @@
                             <div class="feature"><i class="fas fa-check-circle"></i><span>🔓 Bypass incluso</span></div>
                         </div>
                         <select class="select-option" id="kl-special-select">
-                            <option value="300.00" data-product="KL REMOTA BT MOB + BYPASS (Semanal)">Semanal - R$ 300,00</option>
-                            <option value="649.90" data-product="KL REMOTA BT MOB + BYPASS (Mensal)">Mensal - R$ 649,90</option>
-                            <option value="1500.00" data-product="KL REMOTA BT MOB + BYPASS (Pagamento único)">Pagamento único - R$ 1.500,00</option>
+                            <option value="300.00" data-product="KL REMOTA BT MOB V4.2 (Semanal)">Semanal - R$ 300,00</option>
+                            <option value="649.90" data-product="KL REMOTA BT MOB V4.2 (Mensal)">Mensal - R$ 649,90</option>
+                            <option value="1500.00" data-product="KL REMOTA BT MOB V4.2 (Pagamento único)">Pagamento único - R$ 1.500,00</option>
                         </select>
                         <div class="product-actions">
-                            <button class="btn btn-primary btn-buy btn-special-buy" id="kl-special-buy" data-product="KL REMOTA BT MOB + BYPASS (Semanal)" data-price="300.00"><i class="fas fa-shopping-cart"></i> Comprar Agora</button>
+                            <button class="btn btn-primary btn-buy btn-special-buy" id="kl-special-buy" data-product="KL REMOTA BT MOB V4.2 (Semanal)" data-price="300.00"><i class="fas fa-shopping-cart"></i> Comprar Agora</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- KL REMOTA BT MOB V4.5 -->
+                <!-- KL Remota V4.5 -->
                 <div class="product-card special-card">
                     <div class="product-badge badge-special">⭐ V4.5</div>
                     <div class="product-image"><i class="fas fa-server"></i></div>
@@ -2009,7 +2108,7 @@
                     </div>
                 </div>
 
-                <!-- KL REMOTA BT MOB V5.1.0 -->
+                <!-- KL Remota V5.1.0 -->
                 <div class="product-card special-card">
                     <div class="product-badge badge-special">🚀 V5.1.0</div>
                     <div class="product-image"><i class="fas fa-rocket"></i></div>
@@ -2170,7 +2269,7 @@
                 <div class="channel-card">
                     <i class="fab fa-telegram"></i>
                     <h3>Canal Oficial</h3>
-                    <p>Entre no nosso canal oficial no Telegram para novidades, atualizações e suporte exclusivo.</p>
+                    <p>Entre no nosso canal oficial para novidades, atualizações e suporte exclusivo.</p>
                     <a href="https://t.me/+Dij9Byo_W4k1ZWYx" target="_blank" class="btn btn-primary"><i class="fab fa-telegram"></i> Acessar Canal</a>
                 </div>
                 <div class="channel-card">
@@ -2193,8 +2292,8 @@
             <div class="security-grid">
                 <div class="security-item"><i class="fas fa-lock"></i><h3>Pagamento Seguro</h3><p>Criptografia de ponta a ponta.</p></div>
                 <div class="security-item"><i class="fas fa-shield-alt"></i><h3>Garantia de 7 Dias</h3><p>Devolvemos seu dinheiro sem burocracia.</p></div>
-                <div class="security-item"><i class="fas fa-headset"></i><h3>Suporte 24/7</h3><p>Equipe especializada no Telegram.</p></div>
-                <div class="security-item"><i class="fas fa-bolt"></i><h3>Entrega Imediata</h3><p>Após confirmação, acesso automático.</p></div>
+                <div class="security-item"><i class="fas fa-headset"></i><h3>Suporte 24/7</h3><p>Equipe especializada disponível.</p></div>
+                <div class="security-item"><i class="fas fa-bolt"></i><h3>Entrega Automática</h3><p>Acesso liberado após confirmação.</p></div>
             </div>
         </div>
     </section>
@@ -2207,10 +2306,10 @@
                 <p>Veja o que nossos clientes estão dizendo</p>
             </div>
             <div class="testimonials-grid">
-                <div class="testimonial-card"><p class="testimonial-text">Comprei o ManyCam PRO e funcionou perfeitamente! Entrega rápida e suporte excelente.</p><p class="testimonial-author">Carlos M.</p></div>
-                <div class="testimonial-card"><p class="testimonial-text">O Espelhador de Canais revolucionou meu negócio no Telegram.</p><p class="testimonial-author">Maria L.</p></div>
+                <div class="testimonial-card"><p class="testimonial-text">Comprei o ManyCam PRO e funcionou perfeitamente! Entrega rápida e automática.</p><p class="testimonial-author">Carlos M.</p></div>
+                <div class="testimonial-card"><p class="testimonial-text">O Espelhador de Canais revolucionou meu negócio. Acesso imediato.</p><p class="testimonial-author">Maria L.</p></div>
                 <div class="testimonial-card"><p class="testimonial-text">Produto chegou no prazo, funcionou como prometido. Recomendo muito!</p><p class="testimonial-author">Ana P.</p></div>
-                <div class="testimonial-card"><p class="testimonial-text">Fácil de usar e exatamente o que eu precisava para automatizar meus canais.</p><p class="testimonial-author">João S.</p></div>
+                <div class="testimonial-card"><p class="testimonial-text">Fácil de usar e exatamente o que eu precisava. Entrega automática excelente.</p><p class="testimonial-author">João S.</p></div>
             </div>
         </div>
     </section>
@@ -2224,11 +2323,11 @@
             </div>
             <div class="faq-item active">
                 <div class="faq-question"><span>Como faço para comprar?</span><i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer"><p>Clique em "Comprar Agora", escolha entre PIX ou USDT (cripto), preencha os dados e finalize. Após a confirmação, o suporte via Telegram libera seu acesso.</p></div>
+                <div class="faq-answer"><p>Clique em "Comprar Agora", escolha entre PIX ou USDT (cripto), preencha os dados e finalize. O acesso é liberado automaticamente após a confirmação do pagamento.</p></div>
             </div>
             <div class="faq-item">
-                <div class="faq-question"><span>Como recebo os produtos especiais?</span><i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer"><p>Após o pagamento, entre em contato com @suphotvip no Telegram para receber o produto em até 30 minutos.</p></div>
+                <div class="faq-question"><span>Como recebo os produtos?</span><i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer"><p>A entrega é automática. Após a confirmação do pagamento, você recebe o acesso imediatamente na plataforma.</p></div>
             </div>
             <div class="faq-item">
                 <div class="faq-question"><span>Os produtos têm garantia?</span><i class="fas fa-chevron-down"></i></div>
@@ -2236,11 +2335,15 @@
             </div>
             <div class="faq-item">
                 <div class="faq-question"><span>Qual a diferença entre as versões da KL Remota BT MOB?</span><i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer"><p>A versão original oferece o básico com bypass incluso. A V4.5 inclui instalação completa + VPS dedicada. A V5.1.0 é a mais avançada, com otimização zero delay, Gpay incluso, bypass completo e suporte para até 3 usuários simultâneos.</p></div>
+                <div class="faq-answer"><p>A V4.2 oferece o básico com bypass incluso. A V4.5 inclui instalação completa + VPS dedicada. A V5.1.0 é a mais avançada, com otimização zero delay, Gpay incluso, bypass completo e suporte para até 3 usuários simultâneos.</p></div>
             </div>
             <div class="faq-item">
                 <div class="faq-question"><span>Posso pagar com criptomoedas?</span><i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer"><p>Sim! Aceitamos USDT TRC-20. No checkout, selecione a opção "Cripto" e envie o valor equivalente ao endereço exibido. Após a confirmação, seu acesso é liberado.</p></div>
+                <div class="faq-answer"><p>Sim! Aceitamos USDT TRC-20. No checkout, selecione a opção "Cripto" e envie o valor equivalente ao endereço exibido. Após a confirmação, seu acesso é liberado automaticamente.</p></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question"><span>Existe teste grátis da KL Remota?</span><i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer"><p>Não. Deixamos bem claro que não existe testes grátis. Apenas clientes sérios e decididos.</p></div>
             </div>
         </div>
     </section>
@@ -2256,17 +2359,17 @@
                 <span class="modal-product-price" id="modalProductPrice">R$0,00</span>
             </div>
 
-            <!-- Abas de pagamento -->
             <div class="payment-tabs">
                 <div class="payment-tab active" data-tab="pix">
                     <i class="fas fa-qrcode"></i> PIX
+                    <span>Pagamento instantâneo</span>
                 </div>
                 <div class="payment-tab" data-tab="crypto">
                     <i class="fab fa-bitcoin"></i> Cripto (USDT)
+                    <span>TRC-20</span>
                 </div>
             </div>
 
-            <!-- Painel PIX -->
             <div class="payment-pane active" id="pane-pix">
                 <div class="coupon-section">
                     <input type="text" id="couponInput" placeholder="Cupom de desconto">
@@ -2333,7 +2436,7 @@
                     <div class="payment-status pending" id="paymentStatus">
                         <div class="status-icon">⏳</div>
                         <div class="status-text">Aguardando pagamento</div>
-                        <div class="status-sub">Após o pagamento, entre em contato com @suphotvip</div>
+                        <div class="status-sub">Acesso liberado automaticamente após confirmação</div>
                     </div>
                     <button class="btn-verificar" id="btnVerificar">
                         <i class="fas fa-sync-alt"></i> Já paguei, verificar
@@ -2342,7 +2445,6 @@
                 </div>
             </div>
 
-            <!-- Painel Cripto -->
             <div class="payment-pane" id="pane-crypto">
                 <div class="crypto-box">
                     <p class="crypto-amount-label">Valor a pagar (USDT TRC-20)</p>
@@ -2355,15 +2457,16 @@
                     </button>
                     <div class="crypto-note">
                         <i class="fas fa-info-circle"></i>
-                        <span>Envie exatamente o valor em USDT para o endereço acima. Após a confirmação na rede, entre em contato com @suphotvip para liberação imediata.</span>
+                        <span>Envie exatamente o valor em USDT para o endereço acima. Após a confirmação na rede, seu acesso será liberado automaticamente.</span>
                     </div>
                 </div>
-                <div class="modal-telegram">
-                    <p>Dúvidas? Fale com nosso suporte:</p>
-                    <a href="https://t.me/suphotvip" target="_blank" class="btn btn-secondary btn-small">
-                        <i class="fab fa-telegram"></i> @suphotvip
-                    </a>
-                </div>
+            </div>
+
+            <div class="modal-telegram">
+                <p>Dúvidas? Fale com nosso suporte:</p>
+                <a href="https://t.me/suphotvip" target="_blank" class="btn btn-secondary btn-small">
+                    <i class="fab fa-telegram"></i> @suphotvip
+                </a>
             </div>
         </div>
     </div>
@@ -2425,9 +2528,9 @@
             '2.000 membros para Telegram': 66.00,
             '5.000 membros para Telegram': 165.00,
             '10.000 membros para Telegram': 275.00,
-            'KL REMOTA BT MOB + BYPASS (Semanal)': 300.00,
-            'KL REMOTA BT MOB + BYPASS (Mensal)': 649.90,
-            'KL REMOTA BT MOB + BYPASS (Pagamento único)': 1500.00,
+            'KL REMOTA BT MOB V4.2 (Semanal)': 300.00,
+            'KL REMOTA BT MOB V4.2 (Mensal)': 649.90,
+            'KL REMOTA BT MOB V4.2 (Pagamento único)': 1500.00,
             'KL REMOTA BT MOB V4.5 (Mensal)': 1500.00,
             'KL REMOTA BT MOB V4.5 (Life Time)': 2700.00,
             'KL REMOTA BT MOB V5.1.0 (Mensal)': 2500.00,
@@ -2489,8 +2592,10 @@
 
         const PROXY = '/api/sigilopay';
         const COUPON_CODE = 'COLAB5';
+        const WELCOME_COUPON = 'BEMVINDO5';
         const DISCOUNT = 0.05;
-        const USDT_RATE = 5.50; // Taxa de câmbio BRL para USDT
+        const WELCOME_DISCOUNT = 5.00; // R$5 fixo
+        const USDT_RATE = 5.50;
 
         function startPromoTimer(duration = 15 * 60) {
             const timerEl = document.getElementById('promoTimer');
@@ -2518,6 +2623,24 @@
             t.classList.add('show');
             setTimeout(() => t.classList.remove('show'), 3500);
         }
+
+        // Banner de boas-vindas
+        const welcomeBanner = document.getElementById('welcomeBanner');
+        const closeBanner = document.getElementById('closeBanner');
+        const welcomeCouponCode = document.getElementById('welcomeCouponCode');
+
+        closeBanner.addEventListener('click', () => {
+            welcomeBanner.style.display = 'none';
+        });
+
+        welcomeCouponCode.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(WELCOME_COUPON);
+                showToast('Cupom copiado! Use no checkout.', 'info');
+            } catch {
+                showToast('Copie manualmente: ' + WELCOME_COUPON, 'info');
+            }
+        });
 
         const cpfInput = document.getElementById('inputCPF');
         const phoneInput = document.getElementById('inputPhone');
@@ -2585,7 +2708,7 @@
                     const status = (res?.status || res?.data?.status || '').toLowerCase();
                     if (['paid','approved','completed','confirmed'].includes(status)) {
                         clearInterval(pollingInterval);
-                        setStatus('paid','✅','Pagamento confirmado!','Acesso liberado! Entre em contato com @suphotvip no Telegram.');
+                        setStatus('paid','✅','Pagamento confirmado!','Acesso liberado automaticamente!');
                         document.getElementById('btnVerificar').style.display = 'none';
                         showToast('Pagamento confirmado! ✅','success');
                         if (typeof fbq === 'function') fbq('track', 'Purchase', { value: currentProduct.price, currency: 'BRL' });
@@ -2617,15 +2740,16 @@
             btnGerar.disabled = false;
             btnGerar.innerHTML = '<i class="fas fa-qrcode"></i> Gerar PIX agora';
             ['grp-name','grp-cpf','grp-phone','grp-email'].forEach(id => setErr(id, false));
-            setStatus('pending','⏳','Aguardando pagamento','Após o pagamento, entre em contato com @suphotvip');
+            setStatus('pending','⏳','Aguardando pagamento','Acesso liberado automaticamente após confirmação');
             document.getElementById('modalProductName').textContent = productName;
             document.getElementById('modalProductPrice').textContent = 'R$' + price.toFixed(2).replace('.',',');
             updateCryptoAmount();
-            // Resetar abas para PIX
             document.querySelectorAll('.payment-tab').forEach(tab => tab.classList.remove('active'));
             document.querySelector('.payment-tab[data-tab="pix"]').classList.add('active');
             document.querySelectorAll('.payment-pane').forEach(pane => pane.classList.remove('active'));
             document.getElementById('pane-pix').classList.add('active');
+            // Limpar cupom
+            document.getElementById('couponInput').value = '';
             document.getElementById('paymentModal').classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -2636,7 +2760,6 @@
             if (pollingInterval) clearInterval(pollingInterval);
         }
 
-        // Tabs de pagamento
         document.querySelectorAll('.payment-tab').forEach(tab => {
             tab.addEventListener('click', function() {
                 const target = this.dataset.tab;
@@ -2647,7 +2770,6 @@
             });
         });
 
-        // KL Remota - Seletor original
         const klSelect = document.getElementById('kl-special-select');
         const klBuyBtn = document.getElementById('kl-special-buy');
         if (klSelect && klBuyBtn) {
@@ -2662,7 +2784,6 @@
             });
         }
 
-        // KL Remota V4.5
         const klV45Select = document.getElementById('kl-v45-select');
         const klV45Btn = document.getElementById('kl-v45-buy');
         if (klV45Select && klV45Btn) {
@@ -2677,7 +2798,6 @@
             });
         }
 
-        // KL Remota V5.1.0
         const klV510Select = document.getElementById('kl-v510-select');
         const klV510Btn = document.getElementById('kl-v510-buy');
         if (klV510Select && klV510Btn) {
@@ -2700,6 +2820,12 @@
                 currentProduct.price = newPrice;
                 updateCryptoAmount();
                 showToast('Cupom aplicado! 5% de desconto.', 'success');
+            } else if (coupon === WELCOME_COUPON) {
+                const newPrice = Math.max(0, originalPrice - WELCOME_DISCOUNT);
+                document.getElementById('modalProductPrice').textContent = 'R$' + newPrice.toFixed(2).replace('.',',');
+                currentProduct.price = newPrice;
+                updateCryptoAmount();
+                showToast('Cupom de boas-vindas aplicado! R$5 de desconto.', 'success');
             } else {
                 currentProduct.price = originalPrice;
                 document.getElementById('modalProductPrice').textContent = 'R$' + originalPrice.toFixed(2).replace('.',',');
@@ -2763,8 +2889,8 @@
 
         document.getElementById('btnVerificar').addEventListener('click', async () => {
             if (!currentTransactionId) {
-                setStatus('pending','⏳','Pagamento pendente','Entre em contato com @suphotvip após o pagamento.');
-                showToast('Após o pagamento, entre em contato com @suphotvip', 'info');
+                setStatus('pending','⏳','Pagamento pendente','Aguardando confirmação automática.');
+                showToast('Após o pagamento, o acesso será liberado automaticamente', 'info');
                 return;
             }
             const btn = document.getElementById('btnVerificar');
@@ -2774,11 +2900,11 @@
                 const status = (res?.status || res?.data?.status || '').toLowerCase();
                 if (['paid','approved','completed','confirmed'].includes(status)) {
                     clearInterval(pollingInterval);
-                    setStatus('paid','✅','Pagamento confirmado!','Acesso liberado!');
+                    setStatus('paid','✅','Pagamento confirmado!','Acesso liberado automaticamente!');
                     btn.style.display = 'none';
                     showToast('Pagamento confirmado! ✅','success');
                 } else {
-                    setStatus('pending','⏳','Ainda não identificamos','Entre em contato com @suphotvip.');
+                    setStatus('pending','⏳','Ainda não identificamos','Aguarde a confirmação automática.');
                     showToast('Pagamento ainda não identificado','info');
                 }
             } catch (e) { showToast('Erro ao verificar: ' + e.message,'error'); }
