@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
-
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
@@ -26,7 +25,6 @@
         manifest-src 'self';
         worker-src 'self';
     ">
-
     <meta http-equiv="Clear-Site-Data" content="cache">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17691475001"></script>
@@ -63,7 +61,6 @@
 
     <style>
         :root {
-            /* Vice City Synthwave Palette */
             --primary: #ff2d95;
             --primary-dark: #d41a7a;
             --primary-light: #ff6bb5;
@@ -88,9 +85,9 @@
             --light: #f0f0ff;
             --muted: #a0a0c0;
             --muted-light: #c8c8e0;
-            --shadow-sm: 0 2px 10px rgba(0,0,0,0.2);
-            --shadow-md: 0 8px 30px rgba(0,0,0,0.4);
-            --shadow-lg: 0 20px 60px rgba(0,0,0,0.6);
+            --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.2);
+            --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.6);
             --shadow-primary: 0 4px 20px var(--primary-glow);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             --radius-sm: 10px;
@@ -108,6 +105,7 @@
         html {
             scroll-behavior: smooth;
             font-size: 16px;
+            -webkit-text-size-adjust: 100%;
         }
 
         body {
@@ -124,12 +122,15 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             background-image:
-                radial-gradient(ellipse at 20% 20%, rgba(255, 45, 149, 0.07) 0%, transparent 55%),
+                radial-gradient(ellipse at 20% 20%, rgba(255, 45, 149, 0.06) 0%, transparent 55%),
                 radial-gradient(ellipse at 80% 80%, rgba(0, 212, 255, 0.05) 0%, transparent 55%),
                 radial-gradient(ellipse at 50% 50%, rgba(123, 47, 247, 0.04) 0%, transparent 60%);
             position: relative;
+            min-height: 100vh;
+            will-change: auto;
         }
 
+        /* Efeito de linhas de varredura sutis estilo retrô (estático, sem animação) */
         body::before {
             content: '';
             position: fixed;
@@ -138,11 +139,26 @@
             width: 100%;
             height: 100%;
             background-image:
-                linear-gradient(rgba(255, 45, 149, 0.025) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 212, 255, 0.025) 1px, transparent 1px);
+                linear-gradient(rgba(255, 45, 149, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 212, 255, 0.02) 1px, transparent 1px);
             background-size: 42px 42px;
             pointer-events: none;
             z-index: 0;
+        }
+
+        /* Sol retrô de Vice City (estático, sem animação) */
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -5%;
+            right: -5%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.12) 0%, rgba(255, 45, 149, 0.06) 40%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            filter: blur(20px);
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -193,9 +209,9 @@
             left: 0;
             width: 100%;
             z-index: 1002;
-            background: linear-gradient(90deg, #ff2d95 0%, #7b2ff7 30%, #00d4ff 60%, #ff2d95 100%);
+            background: linear-gradient(90deg, #ff2d95 0%, #7b2ff7 30%, #00d4ff 60%, #ff6b35 100%);
             background-size: 300% 100%;
-            animation: promoGradient 8s ease-in-out infinite;
+            animation: promoGradient 10s ease-in-out infinite;
             padding: 9px 20px;
             text-align: center;
             color: #ffffff;
@@ -210,12 +226,26 @@
             flex-wrap: wrap;
             box-shadow: 0 2px 20px rgba(255, 45, 149, 0.4);
             font-family: 'Orbitron', 'Space Grotesk', sans-serif;
-            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            will-change: background-position;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
         }
 
         @keyframes promoGradient {
             0%, 100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
+        }
+
+        @media (max-width: 768px) {
+            .month-promo-bar {
+                animation: none; /* Remove animação em mobile para evitar tremedeira */
+                background: linear-gradient(90deg, #ff2d95, #7b2ff7, #00d4ff);
+                font-size: 0.72rem;
+                padding: 7px 14px;
+                gap: 8px;
+                letter-spacing: 0.8px;
+            }
         }
 
         .month-promo-bar .promo-icon {
@@ -228,8 +258,14 @@
             50% { transform: scale(1.2); }
         }
 
+        @media (max-width: 768px) {
+            .month-promo-bar .promo-icon {
+                animation: none; /* Remove animação */
+            }
+        }
+
         .month-promo-bar .promo-coupon {
-            background: rgba(0,0,0,0.35);
+            background: rgba(0, 0, 0, 0.35);
             padding: 3px 12px;
             border-radius: 20px;
             font-family: 'Space Grotesk', monospace;
@@ -237,19 +273,19 @@
             cursor: pointer;
             transition: var(--transition);
             font-size: 0.82rem;
-            border: 1px solid rgba(255,255,255,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .month-promo-bar .promo-coupon:hover {
-            background: rgba(0,0,0,0.55);
-            border-color: rgba(255,255,255,0.6);
+            background: rgba(0, 0, 0, 0.55);
+            border-color: rgba(255, 255, 255, 0.6);
             transform: scale(1.05);
         }
 
         .month-promo-bar .promo-close {
             background: none;
             border: none;
-            color: rgba(255,255,255,0.7);
+            color: rgba(255, 255, 255, 0.7);
             font-size: 1.3rem;
             cursor: pointer;
             padding: 0 5px;
@@ -279,7 +315,7 @@
             border-bottom: 2px solid transparent;
             border-image: linear-gradient(90deg, #ff2d95, #7b2ff7, #00d4ff) 1;
             transition: var(--transition);
-            box-shadow: 0 1px 25px rgba(0,0,0,0.25);
+            box-shadow: 0 1px 25px rgba(0, 0, 0, 0.25);
         }
 
         .header-container {
@@ -394,6 +430,12 @@
             100% { transform: scale(1.1); opacity: 1; }
         }
 
+        @media (max-width: 768px) {
+            .hero::before {
+                animation: none; /* Remove animação para evitar repaint */
+            }
+        }
+
         .hero h1 {
             font-size: clamp(2.4rem, 6vw, 3.8rem);
             margin-bottom: 18px;
@@ -405,6 +447,7 @@
             letter-spacing: -1px;
             text-shadow: none;
             filter: drop-shadow(0 0 25px rgba(255, 45, 149, 0.25));
+            font-family: 'Orbitron', 'Space Grotesk', sans-serif;
         }
 
         .hero p {
@@ -486,7 +529,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
             transition: left 0.5s ease;
         }
 
@@ -624,7 +667,7 @@
             display: flex;
             flex-direction: column;
             height: 100%;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
             backdrop-filter: blur(5px);
         }
 
@@ -656,7 +699,7 @@
             text-transform: uppercase;
             letter-spacing: 0.4px;
             z-index: 2;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         .badge-best { background-color: #ef4444; color: white; }
@@ -876,7 +919,7 @@
             text-align: center;
             border: 1px solid var(--border);
             transition: var(--transition);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
         }
 
         .channel-card:hover {
@@ -1736,7 +1779,7 @@
             display: inline-block;
             width: 18px;
             height: 18px;
-            border: 2.5px solid rgba(255,255,255,0.3);
+            border: 2.5px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
             border-top-color: white;
             animation: spin 0.8s ease-in-out infinite;
@@ -1752,7 +1795,15 @@
         @media (max-width: 768px) {
             body { padding-top: 108px; }
             header { top: 38px; }
-            .month-promo-bar { font-size: 0.72rem; padding: 7px 14px; gap: 8px; letter-spacing: 0.8px; }
+            .month-promo-bar {
+                animation: none;
+                background: linear-gradient(90deg, #ff2d95, #7b2ff7, #00d4ff);
+                font-size: 0.72rem;
+                padding: 7px 14px;
+                gap: 8px;
+                letter-spacing: 0.8px;
+            }
+            .month-promo-bar .promo-icon { animation: none; }
             .header-container { padding: 12px 0; }
             .nav-links {
                 position: fixed;
@@ -1769,6 +1820,8 @@
                 border-bottom: 1px solid var(--border);
                 z-index: 999;
                 box-shadow: var(--shadow-md);
+                max-height: calc(100vh - 102px);
+                overflow-y: auto;
             }
             .nav-links.active { transform: translateY(0); opacity: 1; }
             .mobile-menu-btn { display: block; }
@@ -1794,6 +1847,7 @@
             .payment-tabs { grid-template-columns: 1fr; gap: 8px; }
             .payment-tab { flex-direction: row; }
             .month-promo-bar .promo-close { right: 8px; font-size: 1rem; }
+            .qr-wrapper img { width: 160px; height: 160px; }
         }
 
         @media (max-width: 480px) {
@@ -2494,7 +2548,7 @@
                     <div class="pix-cpf-fixo">
                         <span class="cpf-label"><i class="fas fa-id-card"></i> PIX Copia e Cola (ALT):</span>
                         <span class="cpf-value" id="cpfFixoValue">0a5e3d9a-fc33-445e-9718-c444dc557d51</span>
-                        <button class="cpf-copy-btn" id="cpfCopyBtn" title="Copiar CPF"><i class="fas fa-copy"></i></button>
+                        <button class="cpf-copy-btn" id="cpfCopyBtn" title="Copiar Chave PIX"><i class="fas fa-copy"></i></button>
                     </div>
 
                     <div class="gateway-notice">
@@ -2588,7 +2642,6 @@
     (() => {
         'use strict';
 
-        // Tabela de preços oficiais (congelada) - com 10% de desconto aplicado nas KL remotas
         const OFFICIAL_PRICES = Object.freeze({
             'ManyCam + Método de Tela Cheia': 49.90,
             'ManyCam + Método de Tela Cheia (com instalação)': 149.90,
@@ -2603,7 +2656,6 @@
             '2.000 membros para Telegram': 66.00,
             '5.000 membros para Telegram': 165.00,
             '10.000 membros para Telegram': 275.00,
-            // KL Remotas com 10% de desconto aplicado
             'KL REMOTA BT MOB V4.2 (Semanal)': 270.00,
             'KL REMOTA BT MOB V4.2 (Mensal)': 584.91,
             'KL REMOTA BT MOB V4.2 (Pagamento único)': 1350.00,
@@ -2628,7 +2680,6 @@
             return true;
         }
 
-        // Proteções
         document.addEventListener('contextmenu', e => e.preventDefault());
         document.addEventListener('keydown', e => {
             if (e.ctrlKey && ['u','U','s','S','i','I','j','J','c','C','p','P'].includes(e.key)) {
@@ -2673,7 +2724,6 @@
         const WELCOME_DISCOUNT = 5.00;
         const USDT_RATE = 5.50;
 
-        // ===== FAIXA DE PROMOÇÃO DO MÊS =====
         const monthNames = ['JANEIRO', 'FEVEREIRO', 'MARÇO', 'ABRIL', 'MAIO', 'JUNHO', 'JULHO', 'AGOSTO', 'SETEMBRO', 'OUTUBRO', 'NOVEMBRO', 'DEZEMBRO'];
         const currentMonth = new Date().getMonth();
         const monthName = monthNames[currentMonth];
@@ -3004,7 +3054,7 @@
                 const btn = document.getElementById('btnCopiarPix');
                 btn.classList.add('copied');
                 btn.innerHTML = '<i class="fas fa-check"></i> Copiado!';
-                showToast('CPF do PIX copiado!','success');
+                showToast('Chave PIX copiada!','success');
                 setTimeout(() => {
                     btn.classList.remove('copied');
                     btn.innerHTML = '<i class="fas fa-copy"></i> Copiar código PIX';
@@ -3018,7 +3068,7 @@
                 await navigator.clipboard.writeText(cpfValue);
                 const btn = document.getElementById('cpfCopyBtn');
                 btn.innerHTML = '<i class="fas fa-check" style="color:#10b981;"></i>';
-                showToast('CPF copiado!','success');
+                showToast('Chave PIX copiada!','success');
                 setTimeout(() => {
                     btn.innerHTML = '<i class="fas fa-copy"></i>';
                 }, 2500);
