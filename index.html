@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta http-equiv="Referrer-Policy" content="no-referrer">
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()">
-    <meta name="theme-color" content="#0a0a14">
+    <meta name="theme-color" content="#0a0a12">
     <meta name="color-scheme" content="dark">
     <meta http-equiv="Content-Security-Policy" content="
         default-src 'none';
@@ -25,8 +26,9 @@
         manifest-src 'self';
         worker-src 'self';
     ">
-    <meta http-equiv="Clear-Site-Data" content="cache">
 
+    <meta http-equiv="Clear-Site-Data" content="cache">
+    
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17691475001"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -55,39 +57,35 @@
     <meta name="description" content="Soluções digitais premium para automação, gestão e alto desempenho. Ferramentas exclusivas, segurança total e entrega automática.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="img23.png" type="image/png">
 
     <style>
         :root {
-            --primary: #ff2d95;
-            --primary-dark: #d41a7a;
-            --primary-light: #ff6bb5;
-            --primary-glow: rgba(255, 45, 149, 0.35);
-            --secondary: #00d4ff;
-            --secondary-dark: #0099cc;
-            --secondary-light: #66e5ff;
-            --secondary-glow: rgba(0, 212, 255, 0.3);
-            --purple: #7b2ff7;
-            --purple-dark: #5a1fd0;
-            --purple-light: #a78bfa;
-            --purple-glow: rgba(123, 47, 247, 0.3);
+            --primary: #7c3aed;
+            --primary-dark: #5b21b6;
+            --primary-light: #a78bfa;
+            --primary-glow: rgba(124, 58, 237, 0.3);
+            --secondary: #8b5cf6;
+            --accent: #6d28d9;
+            --blue: #3b82f6;
+            --green: #10b981;
+            --red: #ef4444;
             --gold: #f59e0b;
             --gold-dark: #d97706;
-            --gold-light: #fbbf24;
-            --dark: #0a0a14;
-            --darker: #05050c;
-            --card: #111122;
-            --card-hover: #181832;
-            --border: #1f1f3a;
-            --border-light: #2a2a4d;
-            --light: #f0f0ff;
-            --muted: #a0a0c0;
-            --muted-light: #c8c8e0;
-            --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.2);
-            --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.4);
-            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.6);
+            --dark: #0a0a12;
+            --darker: #05050a;
+            --card: #11111c;
+            --card-hover: #181828;
+            --border: #1f1f2e;
+            --border-light: #2a2a3d;
+            --light: #f0f0f5;
+            --muted: #a0a0b8;
+            --muted-light: #c8c8d8;
+            --shadow-sm: 0 2px 10px rgba(0,0,0,0.2);
+            --shadow-md: 0 8px 30px rgba(0,0,0,0.4);
+            --shadow-lg: 0 20px 60px rgba(0,0,0,0.6);
             --shadow-primary: 0 4px 20px var(--primary-glow);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             --radius-sm: 10px;
@@ -105,7 +103,6 @@
         html {
             scroll-behavior: smooth;
             font-size: 16px;
-            -webkit-text-size-adjust: 100%;
         }
 
         body {
@@ -113,7 +110,7 @@
             color: var(--light);
             font-family: 'Inter', sans-serif;
             line-height: 1.7;
-            padding-top: 122px;
+            padding-top: 76px;
             overflow-x: hidden;
             -webkit-user-select: none;
             -moz-user-select: none;
@@ -121,44 +118,8 @@
             user-select: none;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            background-image:
-                radial-gradient(ellipse at 20% 20%, rgba(255, 45, 149, 0.06) 0%, transparent 55%),
-                radial-gradient(ellipse at 80% 80%, rgba(0, 212, 255, 0.05) 0%, transparent 55%),
-                radial-gradient(ellipse at 50% 50%, rgba(123, 47, 247, 0.04) 0%, transparent 60%);
-            position: relative;
-            min-height: 100vh;
-            will-change: auto;
-        }
-
-        /* Efeito de linhas de varredura sutis estilo retrô (estático, sem animação) */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image:
-                linear-gradient(rgba(255, 45, 149, 0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 212, 255, 0.02) 1px, transparent 1px);
-            background-size: 42px 42px;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* Sol retrô de Vice City (estático, sem animação) */
-        body::after {
-            content: '';
-            position: fixed;
-            bottom: -5%;
-            right: -5%;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(255, 107, 53, 0.12) 0%, rgba(255, 45, 149, 0.06) 40%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 0;
-            filter: blur(20px);
+            background-image: radial-gradient(ellipse at 20% 20%, rgba(124, 58, 237, 0.06) 0%, transparent 60%),
+                              radial-gradient(ellipse at 80% 80%, rgba(139, 92, 246, 0.04) 0%, transparent 60%);
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -172,8 +133,6 @@
             max-width: 1240px;
             margin: 0 auto;
             padding: 0 28px;
-            position: relative;
-            z-index: 1;
         }
 
         img {
@@ -202,120 +161,19 @@
             user-select: text;
         }
 
-        /* ========== FAIXA DE PROMOÇÃO DO MÊS ========== */
-        .month-promo-bar {
+        /* ========== HEADER ========== */
+        header {
+            background-color: rgba(10, 10, 18, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 1002;
-            background: linear-gradient(90deg, #ff2d95 0%, #7b2ff7 30%, #00d4ff 60%, #ff6b35 100%);
-            background-size: 300% 100%;
-            animation: promoGradient 10s ease-in-out infinite;
-            padding: 9px 20px;
-            text-align: center;
-            color: #ffffff;
-            font-weight: 800;
-            font-size: 0.88rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
-            box-shadow: 0 2px 20px rgba(255, 45, 149, 0.4);
-            font-family: 'Orbitron', 'Space Grotesk', sans-serif;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-            will-change: background-position;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-        }
-
-        @keyframes promoGradient {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        @media (max-width: 768px) {
-            .month-promo-bar {
-                animation: none; /* Remove animação em mobile para evitar tremedeira */
-                background: linear-gradient(90deg, #ff2d95, #7b2ff7, #00d4ff);
-                font-size: 0.72rem;
-                padding: 7px 14px;
-                gap: 8px;
-                letter-spacing: 0.8px;
-            }
-        }
-
-        .month-promo-bar .promo-icon {
-            font-size: 1.1rem;
-            animation: pulseIcon 1.8s ease-in-out infinite;
-        }
-
-        @keyframes pulseIcon {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-        }
-
-        @media (max-width: 768px) {
-            .month-promo-bar .promo-icon {
-                animation: none; /* Remove animação */
-            }
-        }
-
-        .month-promo-bar .promo-coupon {
-            background: rgba(0, 0, 0, 0.35);
-            padding: 3px 12px;
-            border-radius: 20px;
-            font-family: 'Space Grotesk', monospace;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: var(--transition);
-            font-size: 0.82rem;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .month-promo-bar .promo-coupon:hover {
-            background: rgba(0, 0, 0, 0.55);
-            border-color: rgba(255, 255, 255, 0.6);
-            transform: scale(1.05);
-        }
-
-        .month-promo-bar .promo-close {
-            background: none;
-            border: none;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 1.3rem;
-            cursor: pointer;
-            padding: 0 5px;
-            line-height: 1;
-            transition: var(--transition);
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .month-promo-bar .promo-close:hover {
-            color: #fff;
-            transform: translateY(-50%) scale(1.2);
-        }
-
-        /* ========== HEADER ========== */
-        header {
-            background-color: rgba(10, 10, 20, 0.92);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            position: fixed;
-            top: 42px;
-            left: 0;
-            width: 100%;
             z-index: 1000;
-            border-bottom: 2px solid transparent;
-            border-image: linear-gradient(90deg, #ff2d95, #7b2ff7, #00d4ff) 1;
+            border-bottom: 1px solid rgba(124, 58, 237, 0.12);
             transition: var(--transition);
-            box-shadow: 0 1px 25px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 1px 20px rgba(0,0,0,0.2);
         }
 
         .header-container {
@@ -340,11 +198,10 @@
         .logo span {
             color: var(--primary-light);
             margin-left: 4px;
-            text-shadow: 0 0 15px var(--primary-glow);
         }
 
         .logo .pro-badge {
-            background: linear-gradient(135deg, var(--primary), var(--purple));
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             font-size: 0.65rem;
             padding: 3px 8px;
@@ -353,7 +210,6 @@
             font-weight: 700;
             letter-spacing: 0.5px;
             text-transform: uppercase;
-            box-shadow: 0 0 12px var(--primary-glow);
         }
 
         .nav-links {
@@ -373,7 +229,7 @@
         }
 
         .nav-link:hover {
-            color: var(--secondary-light);
+            color: var(--light);
         }
 
         .nav-link::after {
@@ -417,9 +273,8 @@
             left: -20%;
             width: 140%;
             height: 180%;
-            background: radial-gradient(circle at 30% 30%, rgba(255, 45, 149, 0.14) 0%, transparent 45%),
-                        radial-gradient(circle at 70% 60%, rgba(0, 212, 255, 0.09) 0%, transparent 40%),
-                        radial-gradient(circle at 50% 80%, rgba(123, 47, 247, 0.1) 0%, transparent 40%);
+            background: radial-gradient(circle at 30% 30%, rgba(124, 58, 237, 0.15) 0%, transparent 45%),
+                        radial-gradient(circle at 70% 60%, rgba(139, 92, 246, 0.08) 0%, transparent 40%);
             z-index: -1;
             pointer-events: none;
             animation: heroGlow 8s ease-in-out infinite alternate;
@@ -430,24 +285,15 @@
             100% { transform: scale(1.1); opacity: 1; }
         }
 
-        @media (max-width: 768px) {
-            .hero::before {
-                animation: none; /* Remove animação para evitar repaint */
-            }
-        }
-
         .hero h1 {
             font-size: clamp(2.4rem, 6vw, 3.8rem);
             margin-bottom: 18px;
-            background: linear-gradient(135deg, #fff0f8 0%, #ffb3d9 25%, #ff2d95 50%, #7b2ff7 75%, #00d4ff 100%);
+            background: linear-gradient(135deg, #f0eaff 0%, #d8ccff 30%, #b39dfc 60%, #8b5cf6 100%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             line-height: 1.15;
             letter-spacing: -1px;
-            text-shadow: none;
-            filter: drop-shadow(0 0 25px rgba(255, 45, 149, 0.25));
-            font-family: 'Orbitron', 'Space Grotesk', sans-serif;
         }
 
         .hero p {
@@ -471,8 +317,8 @@
             align-items: center;
             gap: 10px;
             padding: 12px 20px;
-            background: rgba(255, 45, 149, 0.06);
-            border: 1px solid rgba(255, 45, 149, 0.2);
+            background: rgba(124, 58, 237, 0.06);
+            border: 1px solid rgba(124, 58, 237, 0.2);
             border-radius: 50px;
             font-size: 0.88rem;
             font-weight: 500;
@@ -483,11 +329,10 @@
         }
 
         .badge:hover {
-            background: rgba(255, 45, 149, 0.12);
-            border-color: rgba(255, 45, 149, 0.45);
+            background: rgba(124, 58, 237, 0.12);
+            border-color: rgba(124, 58, 237, 0.4);
             color: var(--light);
             transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(255, 45, 149, 0.2);
         }
 
         .badge i {
@@ -529,7 +374,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
             transition: left 0.5s ease;
         }
 
@@ -538,26 +383,25 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--purple));
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             box-shadow: 0 6px 25px var(--primary-glow);
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 40px var(--primary-glow), 0 0 30px rgba(123, 47, 247, 0.3);
+            box-shadow: 0 10px 35px var(--primary-glow);
         }
 
         .btn-secondary {
             background-color: transparent;
             color: var(--light);
-            border: 1.5px solid rgba(0, 212, 255, 0.4);
+            border: 1.5px solid rgba(124, 58, 237, 0.4);
         }
 
         .btn-secondary:hover {
-            background-color: rgba(0, 212, 255, 0.08);
-            border-color: var(--secondary);
-            box-shadow: 0 0 20px var(--secondary-glow);
+            background-color: rgba(124, 58, 237, 0.08);
+            border-color: var(--primary);
         }
 
         .btn-gold {
@@ -587,8 +431,8 @@
 
         /* ========== TIMER ========== */
         .promo-timer {
-            background: linear-gradient(135deg, rgba(255, 45, 149, 0.08), rgba(0, 212, 255, 0.05));
-            border: 1.5px solid rgba(245, 158, 11, 0.3);
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.08), rgba(139, 92, 246, 0.04));
+            border: 1.5px solid rgba(245, 158, 11, 0.25);
             border-radius: 50px;
             padding: 16px 28px;
             margin: 0 auto 50px;
@@ -597,7 +441,7 @@
             align-items: center;
             justify-content: center;
             gap: 18px;
-            box-shadow: 0 4px 25px rgba(245, 158, 11, 0.12);
+            box-shadow: 0 4px 25px rgba(245, 158, 11, 0.1);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
         }
@@ -620,8 +464,7 @@
             font-weight: 700;
             color: var(--gold);
             letter-spacing: 2px;
-            border: 1px solid rgba(245, 158, 11, 0.35);
-            text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+            border: 1px solid rgba(245, 158, 11, 0.3);
         }
 
         /* ========== SECTION ========== */
@@ -667,25 +510,25 @@
             display: flex;
             flex-direction: column;
             height: 100%;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
             backdrop-filter: blur(5px);
         }
 
         .product-card:hover {
             transform: translateY(-5px);
-            border-color: rgba(255, 45, 149, 0.5);
-            box-shadow: var(--shadow-md), 0 0 25px rgba(255, 45, 149, 0.1);
+            border-color: rgba(124, 58, 237, 0.5);
+            box-shadow: var(--shadow-md);
             background-color: var(--card-hover);
         }
 
         .product-card.special-card {
-            border: 1.5px solid rgba(245, 158, 11, 0.3);
-            background: linear-gradient(145deg, #12122a, #1a1a38);
+            border: 1.5px solid rgba(245, 158, 11, 0.25);
+            background: linear-gradient(145deg, #12121f, #1a1a2e);
         }
 
         .product-card.special-card:hover {
-            border-color: rgba(245, 158, 11, 0.55);
-            box-shadow: 0 12px 35px rgba(245, 158, 11, 0.14);
+            border-color: rgba(245, 158, 11, 0.5);
+            box-shadow: 0 12px 35px rgba(245, 158, 11, 0.12);
         }
 
         .product-badge {
@@ -699,19 +542,19 @@
             text-transform: uppercase;
             letter-spacing: 0.4px;
             z-index: 2;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
 
         .badge-best { background-color: #ef4444; color: white; }
-        .badge-new { background-color: #00d4ff; color: #0a0a14; }
+        .badge-new { background-color: #3b82f6; color: white; }
         .badge-promo { background: linear-gradient(135deg, #f59e0b, #ef4444); color: white; }
         .badge-special { background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #1a1a1a; }
-        .badge-promo-limitada { background: #ef4444; color: white; box-shadow: 0 0 14px rgba(239, 68, 68, 0.6); border: 1px solid #fca5a5; }
-        .badge-discount { background: linear-gradient(135deg, #ff2d95, #7b2ff7); color: white; box-shadow: 0 0 14px rgba(255, 45, 149, 0.5); }
+        .badge-promo-limitada { background: #ef4444; color: white; box-shadow: 0 0 14px rgba(239, 68, 68, 0.5); border: 1px solid #fca5a5; }
+        .badge-desconto { background: linear-gradient(135deg, #10b981, #059669); color: white; box-shadow: 0 0 14px rgba(16, 185, 129, 0.5); }
 
         .product-image {
             height: 170px;
-            background: linear-gradient(135deg, rgba(255, 45, 149, 0.15), rgba(0, 212, 255, 0.06));
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(139, 92, 246, 0.04));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -723,11 +566,11 @@
         }
 
         .product-card:hover .product-image {
-            color: #ff9ecb;
+            color: #c4b5fd;
         }
 
         .special-card .product-image {
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(245, 158, 11, 0.03));
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.02));
             color: var(--gold);
         }
 
@@ -769,6 +612,18 @@
             text-decoration: line-through;
             color: var(--muted);
             opacity: 0.7;
+        }
+
+        .discount-tag {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 20px;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
         }
 
         .product-features {
@@ -823,7 +678,7 @@
             transition: var(--transition);
             appearance: none;
             -webkit-appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%23a0a0c0' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%23a0a0b8' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: right 16px center;
         }
@@ -831,7 +686,7 @@
         .select-option:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(255, 45, 149, 0.15);
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
         }
 
         .video-container {
@@ -901,7 +756,7 @@
         /* ========== CANAIS ========== */
         .channel-links {
             padding: 70px 0;
-            background-color: rgba(17, 17, 34, 0.6);
+            background-color: rgba(17, 17, 28, 0.6);
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
         }
@@ -919,20 +774,19 @@
             text-align: center;
             border: 1px solid var(--border);
             transition: var(--transition);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
         }
 
         .channel-card:hover {
             transform: translateY(-5px);
-            border-color: rgba(0, 212, 255, 0.4);
+            border-color: rgba(124, 58, 237, 0.4);
             box-shadow: var(--shadow-md);
         }
 
         .channel-card i {
             font-size: 2.8rem;
-            color: var(--secondary-light);
+            color: var(--primary-light);
             margin-bottom: 18px;
-            text-shadow: 0 0 20px var(--secondary-glow);
         }
 
         .channel-card h3 { margin-bottom: 10px; font-size: 1.3rem; }
@@ -968,7 +822,7 @@
         /* ========== TESTEMUNHOS ========== */
         .testimonials {
             padding: 70px 0;
-            background-color: rgba(17, 17, 34, 0.6);
+            background-color: rgba(17, 17, 28, 0.6);
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
         }
@@ -989,7 +843,7 @@
         }
 
         .testimonial-card:hover {
-            border-color: rgba(255, 45, 149, 0.3);
+            border-color: rgba(124, 58, 237, 0.3);
             box-shadow: var(--shadow-sm);
         }
 
@@ -999,7 +853,7 @@
             top: 12px;
             left: 18px;
             font-size: 4rem;
-            color: rgba(255, 45, 149, 0.08);
+            color: rgba(124, 58, 237, 0.08);
             font-family: serif;
             line-height: 1;
         }
@@ -1049,7 +903,7 @@
             color: var(--light);
         }
 
-        .faq-question:hover { background-color: rgba(255, 45, 149, 0.04); }
+        .faq-question:hover { background-color: rgba(124, 58, 237, 0.04); }
         .faq-question i { transition: var(--transition); font-size: 1.1rem; color: var(--muted); }
 
         .faq-answer {
@@ -1059,11 +913,11 @@
             transition: max-height 0.4s ease, padding 0.3s ease;
             color: var(--muted);
             line-height: 1.7;
-            background-color: rgba(5, 5, 12, 0.4);
+            background-color: rgba(5, 5, 10, 0.4);
             font-size: 0.92rem;
         }
 
-        .faq-item.active .faq-question { background-color: rgba(255, 45, 149, 0.06); }
+        .faq-item.active .faq-question { background-color: rgba(124, 58, 237, 0.06); }
         .faq-item.active .faq-question i { transform: rotate(180deg); color: var(--primary-light); }
         .faq-item.active .faq-answer { padding: 0 22px 20px; max-height: 500px; }
 
@@ -1075,7 +929,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(5, 5, 12, 0.96);
+            background-color: rgba(5, 5, 10, 0.96);
             z-index: 2000;
             align-items: flex-start;
             justify-content: center;
@@ -1095,7 +949,7 @@
             width: 100%;
             position: relative;
             border: 1px solid var(--border-light);
-            box-shadow: var(--shadow-lg), 0 0 40px rgba(255, 45, 149, 0.08);
+            box-shadow: var(--shadow-lg);
             margin: auto;
             animation: modalIn 0.3s ease;
         }
@@ -1124,14 +978,14 @@
         .modal-subtitle { text-align: center; color: var(--muted); margin-bottom: 24px; font-size: 0.92rem; }
 
         .modal-product-info {
-            background-color: rgba(255, 45, 149, 0.08);
+            background-color: rgba(124, 58, 237, 0.08);
             padding: 16px 20px;
             border-radius: var(--radius-md);
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 22px;
-            border: 1px solid rgba(255, 45, 149, 0.2);
+            border: 1px solid rgba(124, 58, 237, 0.15);
             flex-wrap: wrap;
             gap: 8px;
         }
@@ -1139,7 +993,6 @@
         .modal-product-name { font-weight: 600; color: var(--light); font-size: 1.05rem; }
         .modal-product-price { font-weight: 700; color: var(--primary-light); font-family: 'Space Grotesk', sans-serif; font-size: 1.35rem; }
 
-        /* Tabs de pagamento */
         .payment-tabs {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1171,35 +1024,19 @@
         }
 
         .payment-tab.active {
-            background-color: rgba(255, 45, 149, 0.1);
+            background-color: rgba(124, 58, 237, 0.1);
             border-color: var(--primary);
             color: var(--primary-light);
-            box-shadow: 0 0 20px rgba(255, 45, 149, 0.2);
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.2);
         }
 
-        .payment-tab i {
-            font-size: 1.4rem;
-        }
+        .payment-tab i { font-size: 1.4rem; }
+        .payment-tab span { font-size: 0.8rem; font-weight: 500; color: var(--muted); }
+        .payment-tab.active span { color: var(--primary-light); }
 
-        .payment-tab span {
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: var(--muted);
-        }
+        .payment-pane { display: none; }
+        .payment-pane.active { display: block; }
 
-        .payment-tab.active span {
-            color: var(--primary-light);
-        }
-
-        .payment-pane {
-            display: none;
-        }
-
-        .payment-pane.active {
-            display: block;
-        }
-
-        /* Estilos PIX */
         .coupon-section {
             margin-bottom: 18px;
             display: flex;
@@ -1278,7 +1115,7 @@
         .form-group input:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(255, 45, 149, 0.15);
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
         }
 
         .form-row {
@@ -1294,7 +1131,7 @@
         .btn-gerar-pix {
             width: 100%;
             padding: 14px;
-            background: linear-gradient(135deg, var(--primary), var(--purple));
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             border: none;
             border-radius: var(--radius-sm);
@@ -1351,8 +1188,8 @@
         }
 
         .gateway-notice {
-            background-color: rgba(0, 212, 255, 0.06);
-            border: 1px solid rgba(0, 212, 255, 0.15);
+            background-color: rgba(59, 130, 246, 0.06);
+            border: 1px solid rgba(59, 130, 246, 0.15);
             border-radius: var(--radius-sm);
             padding: 10px 14px;
             margin: 14px 0 16px;
@@ -1360,13 +1197,13 @@
             align-items: flex-start;
             gap: 8px;
             font-size: 0.78rem;
-            color: #7dd8fc;
+            color: #93c5fd;
             line-height: 1.5;
             text-align: left;
         }
 
         .gateway-notice i {
-            color: var(--secondary);
+            color: #3b82f6;
             font-size: 0.85rem;
             flex-shrink: 0;
             margin-top: 1px;
@@ -1401,7 +1238,7 @@
             background-color: var(--darker);
             padding: 14px;
             border-radius: var(--radius-sm);
-            border: 1px dashed rgba(255, 45, 149, 0.5);
+            border: 1px dashed rgba(124, 58, 237, 0.5);
             color: var(--light);
             font-family: 'Space Grotesk', monospace;
             font-size: 0.82rem;
@@ -1415,9 +1252,9 @@
         .btn-copiar-pix {
             width: 100%;
             padding: 12px;
-            background-color: rgba(255, 45, 149, 0.08);
+            background-color: rgba(124, 58, 237, 0.08);
             color: var(--primary-light);
-            border: 1px solid rgba(255, 45, 149, 0.3);
+            border: 1px solid rgba(124, 58, 237, 0.3);
             border-radius: var(--radius-sm);
             font-weight: 600;
             cursor: pointer;
@@ -1466,7 +1303,7 @@
             font-family: 'Inter', sans-serif;
         }
 
-        .btn-verificar:hover { background-color: var(--purple); }
+        .btn-verificar:hover { background-color: var(--primary); }
 
         .expiry-note {
             margin-top: 14px;
@@ -1491,7 +1328,6 @@
             margin-bottom: 10px;
         }
 
-        /* Cripto */
         .crypto-box {
             background-color: var(--darker);
             border-radius: var(--radius-md);
@@ -1579,8 +1415,8 @@
         }
 
         .pix-cpf-fixo {
-            background: rgba(255, 45, 149, 0.06);
-            border: 1px dashed rgba(255, 45, 149, 0.3);
+            background: rgba(124, 58, 237, 0.06);
+            border: 1px dashed rgba(124, 58, 237, 0.25);
             border-radius: var(--radius-sm);
             padding: 10px 14px;
             margin-top: 12px;
@@ -1602,14 +1438,16 @@
 
         .pix-cpf-fixo .cpf-value {
             font-family: 'Space Grotesk', monospace;
-            font-size: 0.92rem;
+            font-size: 0.85rem;
             font-weight: 700;
             color: var(--primary-light);
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
             background: var(--darker);
-            padding: 3px 12px;
+            padding: 3px 10px;
             border-radius: 4px;
-            border: 1px solid rgba(255, 45, 149, 0.3);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            word-break: break-all;
+            max-width: 100%;
         }
 
         .pix-cpf-fixo .cpf-copy-btn {
@@ -1625,7 +1463,56 @@
 
         .pix-cpf-fixo .cpf-copy-btn:hover {
             color: var(--primary-light);
-            background: rgba(255, 45, 149, 0.1);
+            background: rgba(124, 58, 237, 0.1);
+        }
+
+        /* ===== BANNER DE CUPOM DE BOAS-VINDAS ===== */
+        .welcome-banner {
+            position: fixed;
+            top: 76px;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.95), rgba(245, 158, 11, 0.9));
+            padding: 10px 20px;
+            text-align: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .welcome-banner .coupon-code {
+            background: rgba(0,0,0,0.3);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-family: 'Space Grotesk', monospace;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .welcome-banner .coupon-code:hover {
+            background: rgba(0,0,0,0.5);
+        }
+
+        .welcome-banner .close-banner {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0 5px;
+        }
+
+        .welcome-banner .close-banner:hover {
+            color: #ddd;
         }
 
         /* ===== BOTÃO DE SUPORTE FIXO ===== */
@@ -1641,7 +1528,7 @@
         }
 
         .support-fab .support-label {
-            background: rgba(10, 10, 20, 0.9);
+            background: rgba(10, 10, 18, 0.9);
             color: var(--muted);
             padding: 4px 12px;
             border-radius: 20px;
@@ -1658,11 +1545,11 @@
             width: 56px;
             height: 56px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            background: linear-gradient(135deg, #0ea5e9, #2563eb);
             color: white;
             border: none;
             cursor: pointer;
-            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.4);
+            box-shadow: 0 4px 20px rgba(14, 165, 233, 0.4);
             transition: var(--transition);
             display: flex;
             align-items: center;
@@ -1675,14 +1562,14 @@
 
         .support-btn:hover {
             transform: scale(1.08);
-            box-shadow: 0 6px 30px rgba(0, 212, 255, 0.6);
+            box-shadow: 0 6px 30px rgba(14, 165, 233, 0.6);
         }
 
         .support-btn .support-badge {
             position: absolute;
             top: -4px;
             right: -4px;
-            background: #ff2d95;
+            background: #ef4444;
             color: white;
             font-size: 0.52rem;
             font-weight: 800;
@@ -1693,8 +1580,8 @@
         }
 
         @keyframes supportPulse {
-            0%, 100% { box-shadow: 0 4px 20px rgba(0, 212, 255, 0.35); }
-            50% { box-shadow: 0 4px 40px rgba(0, 212, 255, 0.7); }
+            0%, 100% { box-shadow: 0 4px 20px rgba(14, 165, 233, 0.35); }
+            50% { box-shadow: 0 4px 40px rgba(14, 165, 233, 0.7); }
         }
 
         @keyframes blink {
@@ -1706,8 +1593,7 @@
         footer {
             background-color: var(--darker);
             padding: 55px 0 28px;
-            border-top: 2px solid transparent;
-            border-image: linear-gradient(90deg, #ff2d95, #7b2ff7, #00d4ff) 1;
+            border-top: 1px solid var(--border);
         }
 
         .footer-content {
@@ -1739,7 +1625,7 @@
             width: 48px;
             height: 48px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--purple));
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             border: none;
             cursor: pointer;
@@ -1779,7 +1665,7 @@
             display: inline-block;
             width: 18px;
             height: 18px;
-            border: 2.5px solid rgba(255, 255, 255, 0.3);
+            border: 2.5px solid rgba(255,255,255,0.3);
             border-radius: 50%;
             border-top-color: white;
             animation: spin 0.8s ease-in-out infinite;
@@ -1793,24 +1679,15 @@
         }
 
         @media (max-width: 768px) {
-            body { padding-top: 108px; }
-            header { top: 38px; }
-            .month-promo-bar {
-                animation: none;
-                background: linear-gradient(90deg, #ff2d95, #7b2ff7, #00d4ff);
-                font-size: 0.72rem;
-                padding: 7px 14px;
-                gap: 8px;
-                letter-spacing: 0.8px;
-            }
-            .month-promo-bar .promo-icon { animation: none; }
+            body { padding-top: 64px; }
             .header-container { padding: 12px 0; }
+            .welcome-banner { top: 64px; font-size: 0.8rem; padding: 8px 15px; }
             .nav-links {
                 position: fixed;
-                top: 102px;
+                top: 64px;
                 left: 0;
                 width: 100%;
-                background-color: rgba(10, 10, 20, 0.98);
+                background-color: rgba(10, 10, 18, 0.98);
                 flex-direction: column;
                 padding: 20px;
                 gap: 16px;
@@ -1820,8 +1697,6 @@
                 border-bottom: 1px solid var(--border);
                 z-index: 999;
                 box-shadow: var(--shadow-md);
-                max-height: calc(100vh - 102px);
-                overflow-y: auto;
             }
             .nav-links.active { transform: translateY(0); opacity: 1; }
             .mobile-menu-btn { display: block; }
@@ -1846,8 +1721,6 @@
             .timer-clock { font-size: 1.3rem; padding: 4px 12px; }
             .payment-tabs { grid-template-columns: 1fr; gap: 8px; }
             .payment-tab { flex-direction: row; }
-            .month-promo-bar .promo-close { right: 8px; font-size: 1rem; }
-            .qr-wrapper img { width: 160px; height: 160px; }
         }
 
         @media (max-width: 480px) {
@@ -1860,9 +1733,9 @@
             .music-player { bottom: 24px; right: 12px; }
             .support-fab { bottom: 80px; right: 10px; }
             .support-btn { width: 44px; height: 44px; font-size: 1.3rem; }
-            .pix-cpf-fixo .cpf-value { font-size: 0.78rem; padding: 3px 8px; }
+            .pix-cpf-fixo .cpf-value { font-size: 0.72rem; padding: 3px 8px; }
             .crypto-amount { font-size: 1.6rem; }
-            .month-promo-bar { font-size: 0.62rem; padding: 6px 10px; letter-spacing: 0.5px; }
+            .welcome-banner { font-size: 0.75rem; }
         }
     </style>
 
@@ -1904,15 +1777,13 @@
 </head>
 <body>
 
-    <!-- ========== FAIXA DE PROMOÇÃO DO MÊS ========== -->
-    <div id="monthPromoBar" class="month-promo-bar">
-        <i class="fas fa-bolt promo-icon"></i>
-        <span id="monthPromoText">PROMOÇÃO DE SETEMBRO</span>
-        <span>—</span>
-        <span>Cupom:</span>
-        <span class="promo-coupon" id="monthPromoCoupon">BEMVINDO5</span>
-        <span>para R$5 OFF</span>
-        <button class="promo-close" id="closePromoBar" aria-label="Fechar">&times;</button>
+    <!-- Banner de cupom de boas-vindas -->
+    <div id="welcomeBanner" class="welcome-banner">
+        <i class="fas fa-gift"></i>
+        <span>Bem-vindo! Use o cupom</span>
+        <span class="coupon-code" id="welcomeCouponCode">BEMVINDO5</span>
+        <span>para R$5 de desconto em qualquer produto</span>
+        <button class="close-banner" id="closeBanner" aria-label="Fechar">&times;</button>
     </div>
 
     <header id="mainHeader">
@@ -2002,6 +1873,7 @@
                         <div class="product-price">
                             <span class="current-price">R$39,90</span>
                             <span class="original-price">R$79,90</span>
+                            <span class="discount-tag">-50%</span>
                         </div>
                         <div class="product-features">
                             <div class="feature"><i class="fas fa-check"></i><span>Versão PRO completa desbloqueada</span></div>
@@ -2023,6 +1895,7 @@
                         <div class="product-price">
                             <span class="current-price">R$29,90</span>
                             <span class="original-price">R$60,00</span>
+                            <span class="discount-tag">-50%</span>
                         </div>
                         <div class="product-features">
                             <div class="feature"><i class="fas fa-check"></i><span>Videochamada em tela cheia no PC</span></div>
@@ -2044,6 +1917,7 @@
                         <div class="product-price">
                             <span class="current-price">R$69,90</span>
                             <span class="original-price">R$249,90</span>
+                            <span class="discount-tag">-72%</span>
                         </div>
                         <div class="product-features">
                             <div class="feature"><i class="fas fa-check"></i><span>Clona canais em tempo real</span></div>
@@ -2067,6 +1941,7 @@
                         <div class="product-price">
                             <span class="current-price">R$69,90</span>
                             <span class="original-price">R$199,90</span>
+                            <span class="discount-tag">-65%</span>
                         </div>
                         <div class="product-features">
                             <div class="feature"><i class="fas fa-check"></i><span>Clona conteúdo de canais e grupos</span></div>
@@ -2090,6 +1965,7 @@
                         <div class="product-price">
                             <span class="current-price">R$32,90</span>
                             <span class="original-price">R$49,90</span>
+                            <span class="discount-tag">-34%</span>
                         </div>
                         <div class="product-features">
                             <div class="feature"><i class="fas fa-check"></i><span>Corta mais de 1000 imagens de uma vez</span></div>
@@ -2113,6 +1989,7 @@
                         <div class="product-price">
                             <span class="current-price">R$249,90</span>
                             <span class="original-price">R$350,00</span>
+                            <span class="discount-tag">-29%</span>
                         </div>
                         <div class="product-features">
                             <div class="feature"><i class="fas fa-check"></i><span>Extrai membros de grupos e canais</span></div>
@@ -2134,6 +2011,7 @@
                         <div class="product-price">
                             <span class="current-price">R$299,90</span>
                             <span class="original-price">R$549,90</span>
+                            <span class="discount-tag">-45%</span>
                         </div>
                         <div class="product-features">
                             <div class="feature"><i class="fas fa-check"></i><span>Espelhador de Canais</span></div>
@@ -2174,7 +2052,7 @@
     </section>
 
     <!-- ========== SEÇÃO KL REMOTA BT MOB ========== -->
-    <section id="kl-remota" class="section" style="background-color: rgba(17, 17, 34, 0.5); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <section id="kl-remota" class="section" style="background-color: rgba(17, 17, 28, 0.5); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
         <div class="container">
             <div class="kl-section-header">
                 <h2>⚡ KL REMOTA BT MOB</h2>
@@ -2198,15 +2076,14 @@
                             <div class="feature"><i class="fas fa-eye"></i><span>🖥️ Visualização remota</span></div>
                             <div class="feature"><i class="fas fa-camera-retro"></i><span>📱 Ver câmera em tempo real</span></div>
                             <div class="feature"><i class="fas fa-check-circle"></i><span>🔓 Bypass incluso</span></div>
-                            <div class="feature" style="color: var(--primary-light);"><i class="fas fa-tag"></i><span>🔥 -10% de desconto aplicado!</span></div>
                         </div>
                         <select class="select-option" id="kl-special-select">
-                            <option value="270.00" data-product="KL REMOTA BT MOB V4.2 (Semanal)">Semanal - R$ 270,00</option>
-                            <option value="584.91" data-product="KL REMOTA BT MOB V4.2 (Mensal)">Mensal - R$ 584,91</option>
-                            <option value="1350.00" data-product="KL REMOTA BT MOB V4.2 (Pagamento único)">Pagamento único - R$ 1.350,00</option>
+                            <option value="300.00" data-product="KL REMOTA BT MOB V4.2 (Semanal)">Semanal - R$ 300,00</option>
+                            <option value="649.90" data-product="KL REMOTA BT MOB V4.2 (Mensal)">Mensal - R$ 649,90</option>
+                            <option value="1500.00" data-product="KL REMOTA BT MOB V4.2 (Pagamento único)">Pagamento único - R$ 1.500,00</option>
                         </select>
                         <div class="product-actions">
-                            <button class="btn btn-primary btn-buy btn-special-buy" id="kl-special-buy" data-product="KL REMOTA BT MOB V4.2 (Semanal)" data-price="270.00"><i class="fas fa-shopping-cart"></i> Comprar Agora</button>
+                            <button class="btn btn-primary btn-buy btn-special-buy" id="kl-special-buy" data-product="KL REMOTA BT MOB V4.2 (Semanal)" data-price="300.00"><i class="fas fa-shopping-cart"></i> Comprar Agora</button>
                         </div>
                     </div>
                 </div>
@@ -2224,14 +2101,13 @@
                             <div class="feature"><i class="fas fa-eye"></i><span>👁️ Monitoramento remoto</span></div>
                             <div class="feature"><i class="fas fa-shield-alt"></i><span>🛡️ Bypass atualizado</span></div>
                             <div class="feature"><i class="fas fa-server"></i><span>☁️ VPS dedicada incluso</span></div>
-                            <div class="feature" style="color: var(--primary-light);"><i class="fas fa-tag"></i><span>🔥 -10% de desconto aplicado!</span></div>
                         </div>
                         <select class="select-option" id="kl-v45-select">
-                            <option value="1350.00" data-product="KL REMOTA BT MOB V4.5 (Mensal)">Mensal - R$ 1.350,00</option>
-                            <option value="2430.00" data-product="KL REMOTA BT MOB V4.5 (Life Time)">Life Time - R$ 2.430,00</option>
+                            <option value="1500.00" data-product="KL REMOTA BT MOB V4.5 (Mensal)">Mensal - R$ 1.500,00</option>
+                            <option value="2700.00" data-product="KL REMOTA BT MOB V4.5 (Life Time)">Life Time - R$ 2.700,00</option>
                         </select>
                         <div class="product-actions">
-                            <button class="btn btn-primary btn-buy btn-special-buy" id="kl-v45-buy" data-product="KL REMOTA BT MOB V4.5 (Mensal)" data-price="1350.00"><i class="fas fa-shopping-cart"></i> Comprar Agora</button>
+                            <button class="btn btn-primary btn-buy btn-special-buy" id="kl-v45-buy" data-product="KL REMOTA BT MOB V4.5 (Mensal)" data-price="1500.00"><i class="fas fa-shopping-cart"></i> Comprar Agora</button>
                         </div>
                     </div>
                 </div>
@@ -2249,14 +2125,13 @@
                             <div class="feature"><i class="fas fa-download"></i><span>🔧 Instalação inclusa</span></div>
                             <div class="feature"><i class="fas fa-users"></i><span>👥 Até 3 usuários simultâneos</span></div>
                             <div class="feature"><i class="fas fa-check-circle"></i><span>✅ Última atualização</span></div>
-                            <div class="feature" style="color: var(--primary-light);"><i class="fas fa-tag"></i><span>🔥 -10% de desconto aplicado!</span></div>
                         </div>
                         <select class="select-option" id="kl-v510-select">
-                            <option value="2250.00" data-product="KL REMOTA BT MOB V5.1.0 (Mensal)">Mensal - R$ 2.250,00</option>
-                            <option value="4680.00" data-product="KL REMOTA BT MOB V5.1.0 (Life Time)">Life Time - R$ 4.680,00</option>
+                            <option value="2500.00" data-product="KL REMOTA BT MOB V5.1.0 (Mensal)">Mensal - R$ 2.500,00</option>
+                            <option value="5200.00" data-product="KL REMOTA BT MOB V5.1.0 (Life Time)">Life Time - R$ 5.200,00</option>
                         </select>
                         <div class="product-actions">
-                            <button class="btn btn-primary btn-buy btn-special-buy" id="kl-v510-buy" data-product="KL REMOTA BT MOB V5.1.0 (Mensal)" data-price="2250.00"><i class="fas fa-shopping-cart"></i> Comprar Agora</button>
+                            <button class="btn btn-primary btn-buy btn-special-buy" id="kl-v510-buy" data-product="KL REMOTA BT MOB V5.1.0 (Mensal)" data-price="2500.00"><i class="fas fa-shopping-cart"></i> Comprar Agora</button>
                         </div>
                     </div>
                 </div>
@@ -2280,6 +2155,8 @@
                         <h3>ESQUEMA HONDA</h3>
                         <div class="product-price">
                             <span class="current-price">R$850,00</span>
+                            <span class="original-price">R$1.500,00</span>
+                            <span class="discount-tag">-43%</span>
                         </div>
                         <div class="product-features">
                             <div class="feature"><i class="fas fa-check-circle"></i><span>🔧 Operação completa</span></div>
@@ -2300,6 +2177,8 @@
                         <h3>ESQUEMA VIVA SORTE + MODIFICADOR</h3>
                         <div class="product-price">
                             <span class="current-price">R$950,00</span>
+                            <span class="original-price">R$2.000,00</span>
+                            <span class="discount-tag">-53%</span>
                         </div>
                         <div class="product-features">
                             <div class="feature"><i class="fas fa-check-circle"></i><span>📦 Esquema completo</span></div>
@@ -2319,6 +2198,8 @@
                         <h3>DEEPFAKE EM TEMPO REAL</h3>
                         <div class="product-price">
                             <span class="current-price">R$770,00</span>
+                            <span class="original-price">R$1.500,00</span>
+                            <span class="discount-tag">-49%</span>
                         </div>
                         <div class="product-features">
                             <div class="feature"><i class="fas fa-check-circle"></i><span>🎭 Software vitalício</span></div>
@@ -2337,6 +2218,8 @@
                         <h3>CLONADOR DE VOZ EM TEMPO REAL IA</h3>
                         <div class="product-price">
                             <span class="current-price">R$548,90</span>
+                            <span class="original-price">R$1.100,00</span>
+                            <span class="discount-tag">-50%</span>
                         </div>
                         <div class="product-features">
                             <div class="feature"><i class="fas fa-check-circle"></i><span>🧠 Clona qualquer voz</span></div>
@@ -2355,6 +2238,8 @@
                         <h3>MODIFICADOR DE VOZ BÁSICO IA</h3>
                         <div class="product-price">
                             <span class="current-price">R$273,90</span>
+                            <span class="original-price">R$550,00</span>
+                            <span class="discount-tag">-50%</span>
                         </div>
                         <div class="product-features">
                             <div class="feature"><i class="fas fa-check-circle"></i><span>⏳ 90 dias de acesso</span></div>
@@ -2373,6 +2258,8 @@
                         <h3>HOT MILIONARIO</h3>
                         <div class="product-price">
                             <span class="current-price">R$493,90</span>
+                            <span class="original-price">R$990,00</span>
+                            <span class="discount-tag">-50%</span>
                         </div>
                         <div class="product-features">
                             <div class="feature"><i class="fas fa-check-circle"></i><span>📘 Curso completo de Hot</span></div>
@@ -2464,7 +2351,7 @@
             </div>
             <div class="faq-item">
                 <div class="faq-question"><span>Qual a diferença entre as versões da KL Remota BT MOB?</span><i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer"><p>A V4.2 oferece o básico com bypass incluso. A V4.5 inclui instalação completa + VPS dedicada. A V5.1.0 é a mais avançada, com otimização zero delay, Gpay incluso, bypass completo e suporte para até 3 usuários simultâneos. Todas as versões estão com 10% de desconto na promoção de setembro!</p></div>
+                <div class="faq-answer"><p>A V4.2 oferece o básico com bypass incluso. A V4.5 inclui instalação completa + VPS dedicada. A V5.1.0 é a mais avançada, com otimização zero delay, Gpay incluso, bypass completo e suporte para até 3 usuários simultâneos.</p></div>
             </div>
             <div class="faq-item">
                 <div class="faq-question"><span>Posso pagar com criptomoedas?</span><i class="fas fa-chevron-down"></i></div>
@@ -2539,12 +2426,12 @@
                         <i class="fas fa-check-circle"></i>
                         <span>PIX gerado! Pague agora e receba acesso imediato.</span>
                     </div>
-
+                    
                     <div class="qr-wrapper">
                         <img id="qrCodeImg" src="pix.png" alt="QR Code PIX Fixo" style="display:block; width:190px; height:190px;">
                         <p class="qr-label">Escaneie com o app do seu banco</p>
                     </div>
-
+                    
                     <div class="pix-cpf-fixo">
                         <span class="cpf-label"><i class="fas fa-id-card"></i> PIX Copia e Cola (ALT):</span>
                         <span class="cpf-value" id="cpfFixoValue">0a5e3d9a-fc33-445e-9718-c444dc557d51</span>
@@ -2555,7 +2442,7 @@
                         <i class="fas fa-info-circle"></i>
                         <span><strong>Nota:</strong> Seu banco pode exibir um alerta de segurança ao processar este PIX. Isso é normal e ocorre devido à verificação automática do nosso gateway de pagamento. A transação é 100% segura.</span>
                     </div>
-
+                    
                     <div class="or-divider">ou copie o código abaixo</div>
                     <p class="pix-code-label"><i class="fas fa-align-left"></i> Pix Copia e Cola</p>
                     <div class="pix-code-box" id="pixCopyCode">0a5e3d9a-fc33-445e-9718-c444dc557d51</div>
@@ -2656,13 +2543,13 @@
             '2.000 membros para Telegram': 66.00,
             '5.000 membros para Telegram': 165.00,
             '10.000 membros para Telegram': 275.00,
-            'KL REMOTA BT MOB V4.2 (Semanal)': 270.00,
-            'KL REMOTA BT MOB V4.2 (Mensal)': 584.91,
-            'KL REMOTA BT MOB V4.2 (Pagamento único)': 1350.00,
-            'KL REMOTA BT MOB V4.5 (Mensal)': 1350.00,
-            'KL REMOTA BT MOB V4.5 (Life Time)': 2430.00,
-            'KL REMOTA BT MOB V5.1.0 (Mensal)': 2250.00,
-            'KL REMOTA BT MOB V5.1.0 (Life Time)': 4680.00,
+            'KL REMOTA BT MOB V4.2 (Semanal)': 300.00,
+            'KL REMOTA BT MOB V4.2 (Mensal)': 649.90,
+            'KL REMOTA BT MOB V4.2 (Pagamento único)': 1500.00,
+            'KL REMOTA BT MOB V4.5 (Mensal)': 1500.00,
+            'KL REMOTA BT MOB V4.5 (Life Time)': 2700.00,
+            'KL REMOTA BT MOB V5.1.0 (Mensal)': 2500.00,
+            'KL REMOTA BT MOB V5.1.0 (Life Time)': 5200.00,
             'ESQUEMA HONDA': 850.00,
             'ESQUEMA VIVA SORTE + MODIFICADOR DE VOZ': 950.00,
             'DEEPFAKE EM TEMPO REAL': 770.00,
@@ -2724,30 +2611,6 @@
         const WELCOME_DISCOUNT = 5.00;
         const USDT_RATE = 5.50;
 
-        const monthNames = ['JANEIRO', 'FEVEREIRO', 'MARÇO', 'ABRIL', 'MAIO', 'JUNHO', 'JULHO', 'AGOSTO', 'SETEMBRO', 'OUTUBRO', 'NOVEMBRO', 'DEZEMBRO'];
-        const currentMonth = new Date().getMonth();
-        const monthName = monthNames[currentMonth];
-        document.getElementById('monthPromoText').textContent = 'PROMOÇÃO DE ' + monthName;
-
-        const promoBar = document.getElementById('monthPromoBar');
-        const closePromoBar = document.getElementById('closePromoBar');
-        closePromoBar.addEventListener('click', () => {
-            promoBar.style.display = 'none';
-            document.body.style.paddingTop = '76px';
-            document.querySelector('header').style.top = '0';
-            document.querySelector('.nav-links').style.top = '64px';
-        });
-
-        const monthPromoCoupon = document.getElementById('monthPromoCoupon');
-        monthPromoCoupon.addEventListener('click', async () => {
-            try {
-                await navigator.clipboard.writeText(WELCOME_COUPON);
-                showToast('Cupom copiado! Use no checkout.', 'info');
-            } catch {
-                showToast('Copie manualmente: ' + WELCOME_COUPON, 'info');
-            }
-        });
-
         function startPromoTimer(duration = 15 * 60) {
             const timerEl = document.getElementById('promoTimer');
             let time = duration;
@@ -2770,10 +2633,27 @@
         function showToast(msg, type = 'success') {
             const t = document.getElementById('toast');
             t.textContent = msg;
-            t.style.backgroundColor = type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : type === 'info' ? '#00d4ff' : '#3b82f6';
+            t.style.backgroundColor = type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6';
             t.classList.add('show');
             setTimeout(() => t.classList.remove('show'), 3500);
         }
+
+        const welcomeBanner = document.getElementById('welcomeBanner');
+        const closeBanner = document.getElementById('closeBanner');
+        const welcomeCouponCode = document.getElementById('welcomeCouponCode');
+
+        closeBanner.addEventListener('click', () => {
+            welcomeBanner.style.display = 'none';
+        });
+
+        welcomeCouponCode.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(WELCOME_COUPON);
+                showToast('Cupom copiado! Use no checkout.', 'info');
+            } catch {
+                showToast('Copie manualmente: ' + WELCOME_COUPON, 'info');
+            }
+        });
 
         const cpfInput = document.getElementById('inputCPF');
         const phoneInput = document.getElementById('inputPhone');
@@ -2981,7 +2861,7 @@
             const phone = cleanNum(document.getElementById('inputPhone').value);
             const email = document.getElementById('inputEmail').value.trim();
             const securePrice = OFFICIAL_PRICES[currentProduct.productName] || currentProduct.price;
-
+            
             try {
                 const payload = {
                     identifier: 'ID_' + Date.now(),
@@ -2989,7 +2869,7 @@
                     description: currentProduct.productName,
                     client: { name, email, document: cpf, phone }
                 };
-
+                
                 try {
                     const data = await proxyCall('POST', '/gateway/pix/receive', payload);
                     currentTransactionId = data?.transactionId || data?.data?.transactionId || data?.id || '';
@@ -2997,19 +2877,19 @@
                 } catch (err) {
                     console.log('Registro de transação não disponível, usando PIX fixo.');
                 }
-
+                
                 document.getElementById('formSection').style.display = 'none';
                 document.getElementById('pixArea').style.display = 'block';
-
+                
                 const qrImg = document.getElementById('qrCodeImg');
                 qrImg.src = 'pix.png?' + Date.now();
                 qrImg.style.display = 'block';
-
+                
                 document.getElementById('pixCopyCode').textContent = '0a5e3d9a-fc33-445e-9718-c444dc557d51';
                 document.getElementById('cpfFixoValue').textContent = '0a5e3d9a-fc33-445e-9718-c444dc557d51';
-
+                
                 showToast('PIX gerado com sucesso! Realize o pagamento 🎉','success');
-
+                
                 btn.disabled = false;
                 btn.innerHTML = '<i class="fas fa-qrcode"></i> Gerar PIX agora';
             } catch (err) {
@@ -3150,7 +3030,7 @@
         }
 
         window.addEventListener('scroll', () => {
-            document.getElementById('mainHeader').style.boxShadow = window.scrollY > 50 ? '0 4px 20px rgba(0,0,0,0.2)' : '0 1px 25px rgba(0,0,0,0.25)';
+            document.getElementById('mainHeader').style.boxShadow = window.scrollY > 50 ? '0 4px 20px rgba(0,0,0,0.2)' : '0 1px 20px rgba(0,0,0,0.2)';
         });
 
         const mBtn = document.getElementById('mobileMenuBtn');
@@ -3168,7 +3048,7 @@
             if (this.classList.contains('btn-buy') || this.classList.contains('footer-buy-link')) return;
             e.preventDefault();
             const t = document.querySelector(this.getAttribute('href'));
-            if (t) window.scrollTo({ top: t.offsetTop - 122, behavior: 'smooth' });
+            if (t) window.scrollTo({ top: t.offsetTop - 76, behavior: 'smooth' });
         }));
 
         document.querySelectorAll('.faq-item').forEach(item =>
@@ -3213,9 +3093,9 @@
 
         const fp = [
             {n:'ManyCam + Método', p:'R$49,90'}, {n:'ManyCam PRO', p:'R$39,90'}, {n:'Espelhador', p:'R$69,90'},
-            {n:'Clonador', p:'R$69,90'}, {n:'Combo', p:'R$299,90'}, {n:'KL Semanal', p:'R$270,00'},
-            {n:'KL Mensal', p:'R$584,91'}, {n:'KL Vitalício', p:'R$1.350,00'}, {n:'KL V4.5', p:'R$1.350,00'},
-            {n:'KL V5.1.0', p:'R$2.250,00'}, {n:'Esquema Honda', p:'R$850,00'}
+            {n:'Clonador', p:'R$69,90'}, {n:'Combo', p:'R$299,90'}, {n:'KL Semanal', p:'R$300,00'},
+            {n:'KL Mensal', p:'R$649,90'}, {n:'KL Vitalício', p:'R$1.500,00'}, {n:'KL V4.5', p:'R$1.500,00'},
+            {n:'KL V5.1.0', p:'R$2.500,00'}, {n:'Esquema Honda', p:'R$850,00'}
         ];
         const fn = ['Carlos','Ana','João','Maria','Pedro','Fernanda'];
         const fi = ['S.','M.','P.','R.','F.'];
